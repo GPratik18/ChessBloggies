@@ -4,83 +4,31 @@
 <section class = "design" id = "design">
       <div class = "container">
         <div class = "title">
-          <h2>Recent Topics</h2>
+          <h2 id="topics">Recent Topics</h2>
           <p>recent blogs about topics</p>
         </div>
-
         <div class = "design-content">
-          <!-- item -->
+        <?php
+        $topicQuery="SELECT * FROM topics ORDER BY id DESC";
+        $runTQ=mysqli_query($db,$topicQuery);
+
+        while($post=mysqli_fetch_assoc($runTQ)){
+          ?>
+          
+          
           <div class = "design-item">
             <div class = "design-img">
-              <img src = "projectchess.jpg" alt = "">
-              <span><i class = "far fa-heart"></i> 12</span>
-              <span>Image Credit</span>
+              <img src = "<?=$post['image']?>" alt = "">
+              <span ><?=date('F jS, Y',strtotime($post['created_at']))?></span>
+              <span>Image Courtacy: Google</span>
             </div>
             <div class = "design-title">
-              <a href = "#">make an awesome art portfolio for college or university</a>
+              <a href = "#"><?php echo substr($post['title'],0,30);?>.....</a>
             </div>
           </div>
-          <!-- end of item -->
-          <!-- item -->
-          <div class = "design-item">
-            <div class = "design-img">
-              <img src = "projectchess.jpg" alt = "">
-              <span><i class = "far fa-heart"></i> 22</span>
-              <span>Image Credit</span>
-            </div>
-            <div class = "design-title">
-              <a href = "#">make an awesome art portfolio for college or university</a>
-            </div>
-          </div>
-          <!-- end of item -->
-          <!-- item -->
-          <div class = "design-item">
-            <div class = "design-img">
-              <img src = "projectchess.jpg" alt = "">
-              <span><i class = "far fa-heart"></i> 22</span>
-              <span>Image Credit</span>
-            </div>
-            <div class = "design-title">
-              <a href = "#">make an awesome art portfolio for college or university</a>
-            </div>
-          </div>
-          <!-- end of item -->
-          <!-- item -->
-          <div class = "design-item">
-            <div class = "design-img">
-              <img src = "projectchess.jpg" alt = "">
-              <span><i class = "far fa-heart"></i> 22</span>
-              <span>Image Credit</span>
-            </div>
-            <div class = "design-title">
-              <a href = "#">make an awesome art portfolio for college or university</a>
-            </div>
-          </div>
-          <!-- end of item -->
-          <!-- item -->
-          <div class = "design-item">
-            <div class = "design-img">
-              <img src = "projectchess.jpg" alt = "">
-              <span><i class = "far fa-heart"></i> 22</span>
-              <span>Image Credit</span>
-            </div>
-            <div class = "design-title">
-              <a href = "#">make an awesome art portfolio for college or university</a>
-            </div>
-          </div>
-          <!-- end of item -->
-          <!-- item -->
-          <div class = "design-item">
-            <div class = "design-img">
-              <img src = "projectchess.jpg" alt = "">
-              <span><i class = "far fa-heart"></i> 22</span>
-              <span>Image Credit</span>
-            </div>
-            <div class = "design-title">
-              <a href = "#">make an awesome art portfolio for college or university</a>
-            </div>
-          </div>
-          <!-- end of item -->
+          <?php
+        }
+        ?>
         </div>
       </div>
     </section>

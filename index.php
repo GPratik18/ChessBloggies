@@ -25,12 +25,13 @@
     ?>
     <div class = "title">
       <h2>Latest Blogs</h2>
-      <p>recent blogs about chess</p>
+      <p  id = "blogs">recent blogs about chess</p>
     </div>
     <?php 
       include_once('blog.php'); 
       include_once('about.php');
       include_once('footer.php');
     ?>
+   <a href="#top" class="move_to_top">Move to top</a>
   </body>
 </html>

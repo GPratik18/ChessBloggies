@@ -6,7 +6,7 @@
           </div>
           <div class = "about-text">
             <div class = "title">
-              <h2>Chess Bloggies Community</h2>
+              <h2 id="aboutsection">Chess Bloggies Community</h2>
               <p>Chess is our passion</p>
             </div>
             <p>This website is designed by Abhijit and Pratik for B.Sc(Computer Science) Final Year Non-commercial project submission in Bill Gates Institute of Computer Science and Management, Osmanabad.</p>

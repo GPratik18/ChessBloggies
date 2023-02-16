@@ -1,12 +1,13 @@
 <?php
   require('db.php');
+  require('function.php');
 ?>
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>ChessBloggies</title>
+    <title>Posts</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Font awesome icon -->
     <link rel="stylesheet" href="includes/all.css">
@@ -16,16 +17,19 @@
   <body>
     <?php 
         include_once('navbar.php');
-    ?>
-        <?php
+    
         $post_id=$_GET['id'];
         $postQuery="SELECT * FROM posts WHERE id = $post_id";
         $runPQ=mysqli_query($db,$postQuery);
-        $post=mysqli_fetch_assoc($runPQ)
+        $post=mysqli_fetch_assoc($runPQ);
+        $image_arr=getImageByPost($db,$post['id']);
         ?>
+        <div class = "container">
+          
             <div class = "blog-item">
               <div class = "blog-img">
-                <img src = "projectchess6.jpg" alt = "">
+                <br>
+                <img src = "images/<?=$image_arr['image']?>" alt = "">
                 <span><i class = "far fa-heart"></i></span>
               </div>
               <div class = "blog-text">
@@ -34,8 +38,7 @@
                 <p><?php echo $post['content']; ?></p>
               </div>
             </div>
-          <?php
-      ?>
+        </div>
       <?php
         include_once('footer.php');
       ?>

@@ -1,11 +1,11 @@
 <nav class = "navbar">
         <div class = "container">
-          <a href = "index.php" class = "navbar-brand">CHESS BLOGGIES</a>
+          <a href = "index.php" class = "navbar-brand" id="top">CHESS BLOGGIES</a>
           <div class = "navbar-nav">
             <a href = "index.php">home</a>
-            <a href = "">topics</a>
-            <a href = "">blog</a>
-            <a href = "">about</a>
+            <a href = "#topics">topics</a>
+            <a href = "#blogs">blogs</a>
+            <a href = "#about">about</a>
           </div>
         </div>
       </nav>
