@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800;900&family=Quicksand:wght@300;400;500;600;700&display=swap');
-
 :root{
     --Playfair: 'Playfair Display', serif;
     --Quicksand: 'Quicksand', sans-serif;
@@ -20,12 +19,12 @@ img{
     width: 100%;
     display: block;
 }
+
 .container{
     max-width: 1320px;
     margin: 0 auto;
     padding: 0 1.2rem;
 }
-
 /* header */
 header{
     min-height: 100vh;
@@ -213,6 +212,7 @@ header{
     font-size: 1.4rem;
     padding: 0.3rem 0.6rem;
 }
+
 .blog-text{
     margin: 2.2rem 0;
     padding: 0 1rem;

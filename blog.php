@@ -17,8 +17,9 @@
               <div class = "blog-item">
                 <div class = "blog-img">
                   <img src = "images/<?=$image_arr['image']?>" alt = "">
-                  <span><i class = "far fa-heart"></i></span>
+                  <i class = "far fa-heart"></i>&nbsp<?=$post['likes']?>
                 </div>
+                
                 <div class = "blog-text">
                   <span><?=date('F jS, Y',strtotime($post['created_at']))?></span>
                   <h2><?php echo substr($post['title'],0,25); ?>.....</h2>

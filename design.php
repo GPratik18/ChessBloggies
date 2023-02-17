@@ -14,16 +14,14 @@
 
         while($post=mysqli_fetch_assoc($runTQ)){
           ?>
-          
-          
           <div class = "design-item">
             <div class = "design-img">
               <img src = "<?=$post['image']?>" alt = "">
-              <span ><?=date('F jS, Y',strtotime($post['created_at']))?></span>
+              <span><?=date('F jS, Y',strtotime($post['created_at']))?></span>
               <span>Image Courtacy: Google</span>
             </div>
             <div class = "design-title">
-              <a href = "#"><?php echo substr($post['title'],0,30);?>.....</a>
+              <a href = "topics.php?id=<?=$post['id']?>"><?php echo substr($post['title'],0,30);?>.....</a>
             </div>
           </div>
           <?php
