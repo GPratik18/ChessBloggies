@@ -5,12 +5,9 @@
   <div class = "container">
 
     <div class = "blog-content">
-      <!-- item -->
-
         <?php
           $postQuery="SELECT * FROM posts ORDER BY id DESC LIMIT 9";
           $runPQ=mysqli_query($db,$postQuery);
-
           while($post=mysqli_fetch_assoc($runPQ)){
             $image_arr=getImageByPost($db,$post['id']);
             ?>
@@ -19,7 +16,6 @@
                   <img src = "images/<?=$image_arr['image']?>" alt = "">
                   <i class = "far fa-heart"></i>&nbsp<?=$post['likes']?>
                 </div>
-                
                 <div class = "blog-text">
                   <span><?=date('F jS, Y',strtotime($post['created_at']))?></span>
                   <h2><?php echo substr($post['title'],0,25); ?>.....</h2>
