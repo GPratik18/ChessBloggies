@@ -1,5 +1,6 @@
 <?php
   require('db.php');
+  require('function.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -21,7 +22,7 @@
         <?php
         if(isset($_GET['search'])){
             $searchkey=$_GET['search'];
-            $postQuery="SELECT * FROM posts WHERE title LIKE '%{$searchkey}%' ORDER BY id DESC";
+            $postQuery="SELECT * FROM posts WHERE title LIKE '%".$searchkey."%' ORDER BY id DESC";
         }
         else{
             $postQuery="SELECT * FROM posts ORDER BY id DESC";
@@ -29,10 +30,11 @@
         $runPQ=mysqli_query($db,$postQuery);
         $post=mysqli_fetch_assoc($runPQ);
         while($post=mysqli_fetch_assoc($runPQ)){
+          $image_arr=getImageByPost($db,$post['id']);
             ?>
               <div class = "blog-item">
                 <div class = "blog-img">
-                  <img src = "projectchess6.jpg" alt = "">
+                  <img src = "images/<?=$image_arr['image']?>" alt = "">
                   <span><i class = "far fa-heart"></i></span>
                 </div>
                 <div class = "blog-text">

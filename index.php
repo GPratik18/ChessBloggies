@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Font awesome icon -->
     <link rel="stylesheet" href="includes/all.css">
+    <link rel="icon" href="images/logo.jpg" type="image/icon type">
     <link rel="stylesheet" href="includes/style.css">
     <script src="includes/all.js"></script>
   </head>

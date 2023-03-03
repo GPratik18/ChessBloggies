@@ -4,14 +4,14 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Create Account</title>
+        <link rel="icon" href="\ChessBloggies\images\logo.jpg" type="image/icon type">
         <link rel="stylesheet" href="AdminStyle.css">  
     </head>
     <body>
-        <div class="container">
-            <center>
+        <div class="center">
                 <div class="top">
                     <div class="logo">
-                        <img src="\ChessBloggies1\images\logo.jpg" alt="lskahh">
+                        <img src="\ChessBloggies\images\logo.jpg" alt="lskahh">
                         <h2>CHESS <span class="danger"> BLOGGIES</span></h2>
                     </div>
                     <div class="loginForm">
@@ -24,14 +24,13 @@
                             <input type="password" id="UserPassword"><br>
                             <label for="UserCPassword">Confirm Password </label>
                             <input type="password" id="UserCPassword"><br><br>
-                            <input type="submit" id="Register" name="submit" value="Register"><br>
+                            <input type="submit" id="submit" name="submit" value="Register"><br>
                         </form>
                         <p>Already have an acoount? &nbsp <a href="MainAdmin.php"> Login</a></p>
                     </div>
                     <div class="close" id="close-btn">
                     </div>
                 </div>
-            </center>
         </div>
     </body>
 </html>
