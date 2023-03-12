@@ -1,7 +1,5 @@
 <?php
 require('../db.php');
-
-
 $folder="";
 if(isset($_POST['submit'])){
   if(isset($_POST['blog-title'])){
@@ -55,7 +53,7 @@ $sessionusername=$_GET['sessionusername'];
 
 if($BLOGTITLE1 != null && $BLOGCONTENT1 != null){
   // $runBQ=mysqli_query($db,$topicQuery);
-  $topicQuery="INSERT INTO topics VALUES(NULL,'$BLOGTITLE1','$BLOGCONTENT1','images/".$filename."','current_timestamp()')";
+  $topicQuery="INSERT INTO topics VALUES(NULL,'$BLOGTITLE1','$BLOGCONTENT1','images/".$filename."',NULL)";
   $runTQ=mysqli_query($db,$topicQuery);
   $topicQuery="";
   $BLOGCONTENT1=null;$BLOGTITLE1=null;
