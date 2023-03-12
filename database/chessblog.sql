@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 12, 2023 at 09:13 AM
+-- Generation Time: Mar 12, 2023 at 02:32 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -97,7 +97,8 @@ CREATE TABLE `topics` (
 
 INSERT INTO `topics` (`id`, `title`, `content`, `image`, `created_at`) VALUES
 (1, 'ChessBloggies are ready to Jump in', '  Bloggers are welcome to ChessBloggies.\r\n  This website is designed by Abhijit and Pratik for B.Sc.(Computer Science) Final Year Non-commercial project submission in Bill Gates Institute of Computer Science and Management, Osmanabad.\r\n  Thankful for guidance...', 'images/1.jpg', '2023-02-16 10:46:50'),
-(2, 'Artificial Intelligence in Chess.', 'Artificial intelligence is a revolution in itself with numerous feats of accomplishments. The use of AI in the real world and real-life scenarios is ample.', 'images/2.jpg', '2023-02-16 12:42:13');
+(2, 'Artificial Intelligence in Chess.', 'Artificial intelligence is a revolution in itself with numerous feats of accomplishments. The use of AI in the real world and real-life scenarios is ample.', 'images/2.jpg', '2023-02-16 12:42:13'),
+(3, 'Project Submission', 'The project is near to its finish line and will be submitted soon.', 'images/OIP.jpg', '2023-03-12 08:21:29');
 
 -- --------------------------------------------------------
 
@@ -176,7 +177,7 @@ ALTER TABLE `posts`
 -- AUTO_INCREMENT for table `topics`
 --
 ALTER TABLE `topics`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `users`
