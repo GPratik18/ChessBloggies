@@ -10,15 +10,24 @@
 }
 
 #submit{
-    height: 30px;
-    width:30%;
+    
     color: black;
     background-color: rgb(160, 155, 236);
     cursor:pointer;
     font-family:'Times New Roman', Times, serif;
     font-weight: 700;
-    font-size: larger;
+    font-size:medium;
     border-radius: 5px;
+}
+#submit1{
+    
+  color: black;
+  background-color: rgb(160, 155, 236);
+  cursor:pointer;
+  font-family:'Times New Roman', Times, serif;
+  font-weight: 700;
+  font-size:medium;
+  border-radius: 5px;
 }
 #Register{
     height: 30px;
@@ -93,10 +102,10 @@ label{
     text-align: center;
     margin:auto;
   }
-  #addblog, #dropButton{
+  #addblog, #dropButton, #dropButton1{
     display: block;
   }
-  .form-a{
+  .form-a, .form-a1{
     line-height: 3;
     color: var(--dark);
     margin: 50px;

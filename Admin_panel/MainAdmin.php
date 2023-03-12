@@ -16,7 +16,7 @@
                         <h2>CHESS BLOGGIES</h2>
                     </div>
                     <div class="loginForm">
-                        <form action="" method="post" id="LogForm">
+                        <form action="Dashboard.php" method="post" id="LogForm">
                             <label for="UserName">Enter your username </label>
                             <input type="text" id="UserName"><br>
                             <label for="UserPassword">Enter your Password </label>

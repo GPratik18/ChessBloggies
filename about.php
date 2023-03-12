@@ -2,7 +2,7 @@
       <div class = "container">
         <div class = "about-content">
           <div>
-            <img src = "projectchess3.jpg" alt = "">
+            <img src = "images/projectchess3.jpg" alt = "">
           </div>
           <div class = "about-text">
             <div class = "title">
