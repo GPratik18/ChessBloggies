@@ -16,9 +16,9 @@ if(isset($_POST['submit'])){
     
 
 $sessionusername=$_GET['sessionusername'];
-$blogQuery="INSERT INTO posts VALUES(NULL,'$BLOGTITLE','$BLOGCONTENT','current_timestamp()','$sessionusername')";
+$blogQuery="INSERT INTO posts VALUES(NULL,'$BLOGTITLE','$BLOGCONTENT',NULL ,'$sessionusername')";
 $getBlogQuery="SELECT max(id) FROM posts";
-if($BLOGTITLE != null && $BLOGCONTENT != null){
+if($BLOGTITLE != "" && $BLOGCONTENT != ""){
   $runBQ=mysqli_query($db,$blogQuery);
   $runGBQ=mysqli_query($db,$getBlogQuery);
   $post=mysqli_fetch_array($runGBQ);

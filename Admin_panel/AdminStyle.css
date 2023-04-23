@@ -125,3 +125,21 @@ label{
     resize: none;
     margin-bottom: 10px;
   }
+  .blogs-heading{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+  aside {
+    width: 10%;
+    height: 250px;
+    padding-left: 15px;
+    margin-left: 15px;
+    float: right;
+    font-style: italic;
+    background-color: lightgray;
+  }
+  aside li{
+    padding-top: 20px;
+    border: 1px solid;
+  }

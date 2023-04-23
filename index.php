@@ -33,6 +33,5 @@
       include_once('about.php');
       include_once('footer.php');
     ?>
-   <a href="#top" class="move_to_top">Move to top</a>
 </body>
 </html>

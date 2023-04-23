@@ -44,7 +44,18 @@ if(isset($_SESSION['username'])){
     </ul>
   </div>
 </nav>
-<center>
+
+<aside>
+<ul class="nav flex-column">
+  <li class="nav-item">
+    <a class="nav-link" href="updateaccount.php?str=e">Edit details<br><i class="fa fa-pen"></i></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" aria-current="page" href="updateaccount.php?str=d">Delete This Account <br><i class="fa fa-trash"></i></a>
+  </li>
+  
+</ul>
+</aside>
 <div class="card" style="width: 18rem;">
   <img src="../images/userlogo.jpg" class="card-img-top" alt="...">
   <div class="card-body">
@@ -54,7 +65,7 @@ if(isset($_SESSION['username'])){
     <p class="card-text"><?=$post['state']?></p>
   </div>
 </div>
-</center>
+
 <hr>
 <h2>Add your blog here<a id="dropButton"><i class="fa fa-sort-desc"></i></a></h2>
       <div class="form-a" id="addblog" style="display:none;">
@@ -71,6 +82,7 @@ if(isset($_SESSION['username'])){
       </form>
       </div>
 <?php if($sessionusername=="Admin1" || $sessionusername=="Admin2" || $sessionusername=="Admin3" || $sessionusername=="Admin4" || $sessionusername=="Admin5"){?>
+
       <h2>Add topic here<a id="dropButton1"><i class="fa fa-sort-desc"></i></a></h2>
       <div class="form-a1" id="addblog1" style="display:none;">
       <form action="formactionresult.php?sessionusername=<?=$sessionusername?>" method="post" name="addblogform1" id="addblogform1" enctype="multipart/form-data">
@@ -117,6 +129,33 @@ if(isset($_SESSION['username'])){
         }
   </script>
 <hr>
+<?php if($sessionusername=="Admin1" || $sessionusername=="Admin2" || $sessionusername=="Admin3" || $sessionusername=="Admin4" || $sessionusername=="Admin5"){?>
+<div class="blogs-heading"><h2><b>All Topics</b></h2></div>
+<div class="container">
+  <?php
+    $topic1Query="SELECT * FROM topics ORDER BY id DESC LIMIT 9";
+    $runT1Q=mysqli_query($db,$topic1Query);
+    while($post1=mysqli_fetch_assoc($runT1Q)){?>
+    <div class="blog-content" id="blog-content">
+    <div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <div class="delete-icon"><span><a href="deletepost.php?str=t&num=<?=$post1['id']?>"><i class="fa fa-trash"></i></a></span></div><br>
+  <h2 id="topic-title" name="topic-title"><?php echo substr($post1['title'],0,10); ?>.....</h2>
+  <p><?php echo substr($post1['content'],0,50); ?>....</p>
+  </div>
+</div>
+</div>
+<?php
+}
+?>
+<br>
+</div>
+
+<?php }?>
+
+<hr>
+
+<div class="blogs-heading"><h2><b>Your Blogs </b></h2></div>
 <div class="container">
 <?php
 $postQuery="SELECT * FROM posts WHERE created_by='$sessionusername' ORDER BY id DESC LIMIT 9";
@@ -125,7 +164,8 @@ while($post=mysqli_fetch_assoc($runPQ)){?>
 <div class="blog-content">
     <div class="card" style="width: 18rem;">
   <div class="card-body">
-  <h2><?php echo substr($post['title'],0,15); ?>.....</h2>
+    <div class="delete-icon"><span><a href="deletepost.php?str=b&num=<?=$post['id']?>"><i class="fa fa-trash"></i></a></span></div><br>
+  <h2><?php echo substr($post['title'],0,10); ?>.....</h2>
   <p><?php echo substr($post['content'],0,150); ?>....</p>
   </div>
 </div>
@@ -137,7 +177,9 @@ while($post=mysqli_fetch_assoc($runPQ)){?>
 </body>
 </html>
 <script>clearInp();</script>
-<?php }
+<?php 
+include("../footer.php");
+}
 else{
   header("location: login.php");
 }

@@ -50,20 +50,13 @@ if(empty($err))
                             $_SESSION["loggedin"] = true;
 
                             //Redirect user to welcome page
-                            header("location: Dashboard.php");
-                            
+                            header("location: Dashboard.php");       
                         }
                     }
-
                 }
-
     }
 }    
-
-
 }
-
-
 ?>
 
 <!doctype html>
@@ -114,8 +107,6 @@ if(empty($err))
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-
-
 
 </div>
     <!-- Optional JavaScript -->

@@ -1,4 +1,6 @@
 <?php
+session_start();
+if(!isset($_SESSION['username'])){
 require_once "../db.php";
 $username = $password = $confirm_password = $address= $city= $state="";
 $username_err = $password_err = $confirm_password_err =$userdetail_err="";
@@ -44,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
 if(empty(trim($_POST['password']))){
     $password_err = "Password cannot be blank";
 }
-elseif(strlen(trim($_POST['password'])) < 5){
+else if(strlen(trim($_POST['password'])) < 5){
     $password_err = "Password cannot be less than 5 characters";
 }
 else{
@@ -225,3 +227,9 @@ mysqli_close($db);
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </body>
 </html>
+<?php 
+}
+else{
+  header("location: login.php");
+}
+?>
